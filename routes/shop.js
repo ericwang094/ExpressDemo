@@ -1,9 +1,7 @@
-const exporess = require("express");
+const express = require("express");
+const router = express.Router();
+const productsController = require('../controllers/products');
 
-const router = exporess.Router();
-
-router.get("/", (req,res,next)=>{
-    res.send("<h1>Hello from Express</h1>");
-});
+router.get("/", productsController.getProducts);
 
 module.exports = router;
